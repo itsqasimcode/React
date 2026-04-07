@@ -12,8 +12,8 @@ useCallback hook  is used to memoize (store) a function so that it does not get 
 
      ## useeffect function
 
-useEffect is used to handle side effects in functional components. It runs after render and its execution depends on the dependency array. It can also return a cleanup function to prevent memory leaks. Incorrect dependency handling can cause infinite loops or stale closures.
+useEffect is used to handle side effects in functional components and synchronise a component to external systems. It runs after render and its execution depends on the dependency array. It can also return a cleanup function to prevent memory leaks. Incorrect dependency handling can cause infinite loops or stale closures.
 
           interview
            
-This component generates a password dynamically based on selected options. useState manages UI state, useCallback memoizes functions to prevent unnecessary re-creations, useEffect regenerates the password when dependencies change, and useRef is used to access the DOM for copying text.           
+This component generates a password dynamically based on selected options. useState manages UI state, useCallback memorizes functions to prevent unnecessary re-creations, useEffect regenerates (refreshes) the password when dependencies change, and useRef is used to access the DOM for copying text.           
