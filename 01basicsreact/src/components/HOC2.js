@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Student extends Component {
+export default class HOC2 extends Component {
   render() {
     return (
       <div>
-        <h2>Subject: {this.props.hocSub}</h2>
+        <h2>Addition: {this.props.Subjectupdation}</h2>
       </div>
     )
   }

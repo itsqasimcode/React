@@ -2,7 +2,7 @@ import { Component } from "react"
 
 
 
-const subjects = (STUDENT) => {
+const HOC1 = (HOC2) => {
   
    
     
@@ -10,7 +10,7 @@ const subjects = (STUDENT) => {
       render() {
         return (
 
-          <STUDENT hocSub= "Java"></STUDENT>
+          <HOC2 Subjectupdation= "Java"></HOC2>
         )
       }
     }
@@ -18,4 +18,4 @@ const subjects = (STUDENT) => {
     
 }
 
-export default subjects
+export default HOC1

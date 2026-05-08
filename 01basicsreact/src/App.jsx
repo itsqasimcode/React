@@ -9,14 +9,18 @@ import Parent from './components/Parent';
 import HookArray from './components/HookArray';
 import HooksRevision from './components/HooksRevision';
 import Functioncounterone from './components/functioncounterone';
-import PostsList from './components/PostsList';
-import MapFunction from './components/MapFunction';
+import AxiosGet from './components/AxiosGet';
+import AxiosGetMapFunction from './components/AxiosGetMapFunction';
 import PostForm from './components/axiospostform';
+import Events from './components/events';
+import FormikFormmanual from './components/form-validation/formikformmanual';
+import FormikandYup from './components/form-validation/formikandyup';
 
-import subjects from './components/HOC1';   // ✅ import HOC function
-import Student from './components/Student';     // ✅ import component to wrap
 
-const StudentWithSubject = subjects(Student);   // ✅ create wrapped component
+import HOC1 from './components/HOC1';   // ✅ import HOC function
+import HOC2 from './components/HOC2';     // ✅ import component to wrap
+
+const WrappedComponent = HOC1(HOC2);   // ✅ create wrapped component
 
 export default class App extends Component {
 
@@ -48,7 +52,7 @@ export default class App extends Component {
         <HOC />
 
         {/* HOC wrapped component */}
-        <StudentWithSubject />
+        <WrappedComponent />
 
         <Counter1 number={this.state.count}></Counter1>
 
@@ -71,11 +75,30 @@ export default class App extends Component {
        <HooksRevision/>
 
        <Functioncounterone/>
-       <PostsList/>
-       <MapFunction/>
+        
+        {" "}
+
+       <AxiosGet/>
+        
+        { "  "}
+
+       <AxiosGetMapFunction/>
+    
+    {" "}
 
        <PostForm/>
+        
+          {" "}
+
+
+       <Events/>
+
+       <FormikFormmanual/>
+
+       {" "}
     
+   
+       
       </div>
      
     )

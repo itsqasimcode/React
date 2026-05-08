@@ -9,7 +9,7 @@ function App() {
     <>
     <h1>Redux Toolkit</h1>
     <AddTodo/>
-    <Todos/>
+    <DeleteTodo/>
     </>
   )
 }

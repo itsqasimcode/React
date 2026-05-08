@@ -1,4 +1,125 @@
 import React, { Component } from 'react'
+import axios from "axios";
+
+ 
+  
+   class Postform extends Component {
+
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         userid: "",
+         title : "",
+         body : ""
+      }
+    }
+
+    changeHandler = (e) => {
+      this.setState({[e.target.name] : e.target.value})
+
+    }
+
+    handleSubmit = (e) => {
+
+      e.preventDefault();
+      console.log(this.state);
+
+      axios.post ("https://jsonplaceholder.typicode.com/posts", this.state)
+
+      .then (Response => {console.log (Response)})
+
+      .catch (error => {console.log (error)});
+    }
+
+
+    render() {
+
+      const {userid, title, body} = this.state
+
+      return (
+        <div>axiospostform
+
+        <form onSubmit={this.handleSubmit}>
+           
+           <div>
+            <label> User Id</label>
+            <input
+            
+            type='text'
+            name='userid'
+            value={userid}
+            onChange={this.changeHandler}
+
+             ></input>
+           </div>
+
+           {" "}
+
+            <div>
+            <label> title</label>
+            <input
+            
+            type='text'
+            name='title'
+            value={title}
+            onChange={this.changeHandler}
+
+             ></input>
+           </div>
+
+           {" "}
+
+           <div>
+            <label> Body</label>
+            <input
+            
+            type='text'
+            name='body'
+            value={body}
+            onChange={this.changeHandler}
+
+             ></input>
+           </div>
+
+          <button type='submit'>Submit</button>
+        </form>
+
+        </div>
+      )
+    }
+  }
+ 
+   export default Postform;
+   
+
+   
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React, { Component } from 'react'
 import axios from 'axios';
 
  class PostForm extends Component {
@@ -39,15 +160,36 @@ import axios from 'axios';
         <form onSubmit={this.handleSubmit}>
             <div>
                 <label>User Id</label>
-                <input type='text' value={userid} name='userid' onChange={this.changeHandler}></input>
+                <input 
+                type='text' 
+                value={userid} 
+                name='userid' 
+                onChange={this.changeHandler}>
+                </input>
             </div>
+            
+            {" "}
             <div>
                 <label>Title</label>
-                <input type='text' value={title} name='title' onChange={this.changeHandler}></input>
+                <input 
+                 type='text'
+                 value={title} 
+                 name='title' 
+                 onChange={this.changeHandler}>
+                </input>
             </div>
+
+             {" "}
+
             <div>
                 <label>Body</label>
-                <input type='text' value={body} name='body' onChange={this.changeHandler}></input>
+                <input 
+                type='text'
+                value={body} 
+                name='body'
+                onChange={this.changeHandler}>
+                </input>  
+              
             </div>
             <button type='submit'>Submit</button>
         </form>
@@ -60,4 +202,4 @@ import axios from 'axios';
   }
 }
 
-export default PostForm
+export default PostForm*/

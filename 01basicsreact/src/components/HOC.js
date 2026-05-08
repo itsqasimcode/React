@@ -14,7 +14,7 @@ marksincremented =() =>{
   render() {
     return (
       <div>
-        <h2 onMouseOver={this.marksincremented}> vikas marks{this.state.marks} </h2>
+        <h2  onMouseOver={this.marksincremented}> vikas marks{this.state.marks} </h2>
       </div>
     )
   }
